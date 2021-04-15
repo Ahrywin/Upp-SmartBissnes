@@ -1,0 +1,48 @@
+<div class="row">
+	<div class="col-12 col-md-6 col-lg-3">
+		<div class="card mb-lg-0">
+			<div class="card-body p-0 d-flex align-items-center">
+				<i class="fa fa-credit-card bg-facebook p-4 font-2xl mr-3"></i>
+				<div>
+					<div class="text-value-sm text-danger">{{Data.Name}}</div>
+					<div class="text-muted text-uppercase font-weight-bold small">Nombre de la Cuenta</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-12 col-md-6 col-lg-3">
+		<div class="card mb-lg-0">
+			<div class="card-body p-0 d-flex align-items-center">
+				<i class="fa fa-money bg-facebook p-4 font-2xl mr-3"></i>
+				<div>
+					<div class="text-value-sm text-danger">{{Data.CurrentBalance | currency :  "MXN"}}</div>
+					<div class="text-muted text-uppercase font-weight-bold small">Saldo Actual</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-12 col-md-6 col-lg-3">
+		<div class="card mb-lg-0">
+			<div class="card-body p-0 d-flex align-items-center">
+				<i class="fa fa-calendar bg-facebook p-4 font-2xl mr-3"></i>
+				<div>
+					<div class="text-value-sm text-danger">{{Data.BalanceDate | date : "shortDate"}}</div>
+					<div class="text-muted text-uppercase font-weight-bold small">Fecha de Actualización</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-12 col-md-6 col-lg-3">
+		<div class="card mb-lg-0">
+			<a href="#" (click)="ShowDeletions($event)">
+				<div class="card-body p-0 d-flex align-items-center">
+					<i class="fa fa-archive bg-facebook p-4 font-2xl mr-3"></i>
+					<div>
+						<div class="text-value-sm text-danger">{{Data.DeletionCount | number}}</div>
+						<div class="text-muted text-uppercase font-weight-bold small">Pendientes</div>
+					</div>
+				</div>
+			</a>
+		</div>
+	</div>
+</div>

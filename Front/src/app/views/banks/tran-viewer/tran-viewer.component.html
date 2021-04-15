@@ -1,0 +1,70 @@
+<app-card>
+	<app-bank-resume></app-bank-resume>
+	<app-alert #alert1></app-alert>
+	<div class="mt-4">
+		<app-card>
+			<form (ngSubmit)="LoadData($event)">
+				<div class="row">
+					<div class="col-12 col-lg-3">
+						<div class="form-group mb-lg-0">
+							<input type="date" name="StartDate" class="form-control" [(ngModel)]="FormData.StartDate"
+								placeholder="Inicia" required />
+						</div>
+					</div>
+					<div class="col-12 col-lg-3">
+						<div class="form-group mb-lg-0">
+							<input type="date" name="FinishDate" class="form-control" [(ngModel)]="FormData.FinishDate"
+								placeholder="Finaliza" required />
+						</div>
+					</div>
+					<div class="col-12 col-lg-2">
+						<button type="submit" class="btn btn-success btn-block mt-2 mt-lg-0">Mostrar</button>
+					</div>
+				</div>
+			</form>
+		</app-card>
+	</div>
+	<div class="form-group" [hidden]="!IsLoading">
+		<app-progressbar></app-progressbar>
+	</div>
+	<table class="table table-responsive-lg table-sm" style="width: 100%; min-height: 405px;">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Clave</th>
+				<th>Fecha</th>
+				<th class="text-left">Descripción</th>
+				<!--
+				<th>Creado</th>
+				-->
+				<th>Modificado</th>
+				<th>Importe</th>
+				<th>Saldo</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let obj of GetData()">
+				<td>
+					<div class="btn-group">
+						<button class="btn btn-default btn-sm" (click)="EditTran(obj)">
+							<i class="icon icon-pencil"></i>
+						</button>
+					</div>
+				</td>
+				<td>{{obj.Code}}</td>
+				<td>{{obj.EventDate | date : "shortDate"}}</td>
+				<td class="text-left">{{obj.Description}}</td>
+				<!--
+				<td>{{obj.CreatedDate | date : "short"}}</td>
+				-->
+				<td>{{obj.UpdatedDate | date : "short"}}</td>
+				<td class="text-right">{{obj.Amount | currency : "MXN"}}</td>
+				<td class="text-right">{{obj.CurrentBalance | currency : "MXN"}}</td>
+			</tr>
+			<tr [hidden]="!ShowNotFound()">
+				<td colspan="8" class="text-center">No existen registros con los criterios especificados</td>
+			</tr>
+		</tbody>
+	</table>
+	<app-paginator [hidden]="ShowNotFound()" #paginator1></app-paginator>
+</app-card>

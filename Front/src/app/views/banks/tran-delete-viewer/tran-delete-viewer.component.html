@@ -1,0 +1,46 @@
+<app-card>
+	<app-bank-resume>
+	</app-bank-resume>
+</app-card>
+<app-alert #alert1></app-alert>
+<div class="form-group" [hidden]="!IsLoading">
+	<app-progressbar></app-progressbar>
+</div>
+<app-card>
+	<table class="table table-responsive-lg table-sm" style="width: 100%;">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Creado</th>
+				<th>Author</th>
+				<th>Actualizado</th>
+				<th>Modificó</th>
+				<th>Autorizado</th>
+				<th class="text-center">Movimientos</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let obj of GetData()">
+				<td>
+					<div class="btn-group">
+						<button class="btn btn-default btn-sm" (click)="ShowDetail(obj, $event)">
+							<i class="icon icon-pencil"></i>
+						</button>
+					</div>
+				</td>
+				<td>{{obj.CreatedDate | date : "short"}}</td>
+				<td>{{obj.UserCreatorName}}</td>
+				<td>{{obj.UpdatedDate | date : "short"}}</td>
+				<td>{{obj.UserAuthorizerName}}</td>
+				<td>
+					<span class="badge" [ngClass]="GetAuthorizedClass(obj)">{{GetAuthorizedLabel(obj)}}</span>
+				</td>
+				<td class="text-center">{{obj.DeletionCount | number }}</td>
+			</tr>
+			<tr [hidden]="!ShowNotFound()">
+				<td colspan="8" class="text-center">No existen registros con los criterios especificados</td>
+			</tr>
+		</tbody>
+	</table>
+	<app-paginator [hidden]="ShowNotFound()" #paginator1></app-paginator>
+</app-card>

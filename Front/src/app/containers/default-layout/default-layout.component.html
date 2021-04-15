@@ -1,0 +1,323 @@
+<app-header [navbarBrandRouterLink]="['/dashboard']" [fixed]="true"
+	[navbarBrandFull]="{src: 'data:data:image/png;base64,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', width: 63, height: 25, alt: 'CoreUI Logo'}"
+	[navbarBrandMinimized]="{src: 'data:data:image/png;base64,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', width: 63, height: 25, alt: 'CoreUI Logo'}"
+	[sidebarToggler]="'lg'" [asideMenuToggler]="false">
+	<!--
+	<ul class="nav navbar-nav d-md-down-none">
+		<li class="nav-item px-3">
+			<a class="nav-link" href="#">Dashboard</a>
+		</li>
+		<li class="nav-item px-3">
+			<a class="nav-link" href="#">Users</a>
+		</li>
+		<li class="nav-item px-3">
+			<a class="nav-link" href="#">Settings</a>
+		</li>
+	</ul>
+	-->
+	<ul class="nav navbar-nav ml-auto">
+		<li class="nav-item d-md-down-none">
+			<!--<a class="nav-link" href="#"><i class="icon-bell"></i><span
+					class="badge badge-pill badge-danger">5</span></a>-->
+		</li>
+	</ul>
+</app-header>
+<div class="app-body">
+	<app-sidebar [fixed]="true" [display]="'lg'">
+		<app-sidebar-nav [navItems]="navItems" [perfectScrollbar] [disabled]="sidebarMinimized"></app-sidebar-nav>
+		<app-sidebar-minimizer></app-sidebar-minimizer>
+	</app-sidebar>
+	<!-- Main content -->
+	<main class="main">
+		<!-- Breadcrumb -->
+		<!-- breaking change 'cui-breadcrumb' -->
+		<cui-breadcrumb>
+			<!-- Breadcrumb Menu-->
+			<!--
+			<li class="breadcrumb-menu d-md-down-none">
+				<div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+					<a class="btn" href="#"><i class="icon-speech"></i></a>
+					<a class="btn" [routerLink]="['/dashboard']"><i class="icon-graph"></i> &nbsp;Dashboard</a>
+					<a class="btn" href="#"><i class="icon-settings"></i> &nbsp;Settings</a>
+				</div>
+			</li>
+			-->
+		</cui-breadcrumb>
+		<div class="container-fluid">
+			<router-outlet></router-outlet>
+		</div><!-- /.container-fluid -->
+	</main>
+	
+	<!--
+	<app-aside [fixed]="true" [display]="false">
+		<tabset>
+			<tab>
+				<ng-template tabHeading><i class="icon-list"></i></ng-template>
+				<div class="list-group list-group-accent">
+					<div
+						class="list-group-item list-group-item-accent-secondary bg-light text-center font-weight-bold text-muted text-uppercase small">
+						Today</div>
+					<div class="list-group-item list-group-item-accent-warning list-group-item-divider">
+						<div class="avatar float-right">
+							<img class="img-avatar" src="assets/img/avatars/7.jpg" alt="admin@bootstrapmaster.com">
+						</div>
+						<div>Meeting with
+							<strong>Lucas</strong>
+						</div>
+						<small class="text-muted mr-3">
+							<i class="icon-calendar"></i>  1 - 3pm</small>
+						<small class="text-muted">
+							<i class="icon-location-pin"></i>  Palo Alto, CA</small>
+					</div>
+					<div class="list-group-item list-group-item-accent-info">
+						<div class="avatar float-right">
+							<img class="img-avatar" src="assets/img/avatars/4.jpg" alt="admin@bootstrapmaster.com">
+						</div>
+						<div>Skype with
+							<strong>Megan</strong>
+						</div>
+						<small class="text-muted mr-3">
+							<i class="icon-calendar"></i>  4 - 5pm</small>
+						<small class="text-muted">
+							<i class="icon-social-skype"></i>  On-line</small>
+					</div>
+					<div
+						class="list-group-item list-group-item-accent-secondary bg-light text-center font-weight-bold text-muted text-uppercase small">
+						Tomorrow</div>
+					<div class="list-group-item list-group-item-accent-danger list-group-item-divider">
+						<div>New UI Project -
+							<strong>deadline</strong>
+						</div>
+						<small class="text-muted mr-3">
+							<i class="icon-calendar"></i>  10 - 11pm</small>
+						<small class="text-muted">
+							<i class="icon-home"></i>  creativeLabs HQ</small>
+						<div class="avatars-stack mt-2">
+							<div class="avatar avatar-xs">
+								<img class="img-avatar" src="assets/img/avatars/2.jpg" alt="admin@bootstrapmaster.com">
+							</div>
+							<div class="avatar avatar-xs">
+								<img class="img-avatar" src="assets/img/avatars/3.jpg" alt="admin@bootstrapmaster.com">
+							</div>
+							<div class="avatar avatar-xs">
+								<img class="img-avatar" src="assets/img/avatars/4.jpg" alt="admin@bootstrapmaster.com">
+							</div>
+							<div class="avatar avatar-xs">
+								<img class="img-avatar" src="assets/img/avatars/5.jpg" alt="admin@bootstrapmaster.com">
+							</div>
+							<div class="avatar avatar-xs">
+								<img class="img-avatar" src="assets/img/avatars/6.jpg" alt="admin@bootstrapmaster.com">
+							</div>
+						</div>
+					</div>
+					<div class="list-group-item list-group-item-accent-success list-group-item-divider">
+						<div>
+							<strong>#10 Startups.Garden</strong> Meetup</div>
+						<small class="text-muted mr-3">
+							<i class="icon-calendar"></i>  1 - 3pm</small>
+						<small class="text-muted">
+							<i class="icon-location-pin"></i>  Palo Alto, CA</small>
+					</div>
+					<div class="list-group-item list-group-item-accent-primary list-group-item-divider">
+						<div>
+							<strong>Team meeting</strong>
+						</div>
+						<small class="text-muted mr-3">
+							<i class="icon-calendar"></i>  4 - 6pm</small>
+						<small class="text-muted">
+							<i class="icon-home"></i>  creativeLabs HQ</small>
+						<div class="avatars-stack mt-2">
+							<div class="avatar avatar-xs">
+								<img class="img-avatar" src="assets/img/avatars/2.jpg" alt="admin@bootstrapmaster.com">
+							</div>
+							<div class="avatar avatar-xs">
+								<img class="img-avatar" src="assets/img/avatars/3.jpg" alt="admin@bootstrapmaster.com">
+							</div>
+							<div class="avatar avatar-xs">
+								<img class="img-avatar" src="assets/img/avatars/4.jpg" alt="admin@bootstrapmaster.com">
+							</div>
+							<div class="avatar avatar-xs">
+								<img class="img-avatar" src="assets/img/avatars/5.jpg" alt="admin@bootstrapmaster.com">
+							</div>
+							<div class="avatar avatar-xs">
+								<img class="img-avatar" src="assets/img/avatars/6.jpg" alt="admin@bootstrapmaster.com">
+							</div>
+							<div class="avatar avatar-xs">
+								<img class="img-avatar" src="assets/img/avatars/7.jpg" alt="admin@bootstrapmaster.com">
+							</div>
+							<div class="avatar avatar-xs">
+								<img class="img-avatar" src="assets/img/avatars/8.jpg" alt="admin@bootstrapmaster.com">
+							</div>
+						</div>
+					</div>
+				</div>
+			</tab>
+			<tab>
+				<ng-template tabHeading><i class="icon-speech"></i></ng-template>
+				<div class="p-3">
+					<div class="message">
+						<div class="py-3 pb-5 mr-3 float-left">
+							<div class="avatar">
+								<img src="assets/img/avatars/7.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
+								<span class="avatar-status badge-success"></span>
+							</div>
+						</div>
+						<div>
+							<small class="text-muted">Lukasz Holeczek</small>
+							<small class="text-muted float-right mt-1">1:52 PM</small>
+						</div>
+						<div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
+						<small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+							eiusmod tempor incididunt...</small>
+					</div>
+					<hr>
+					<div class="message">
+						<div class="py-3 pb-5 mr-3 float-left">
+							<div class="avatar">
+								<img src="assets/img/avatars/7.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
+								<span class="avatar-status badge-success"></span>
+							</div>
+						</div>
+						<div>
+							<small class="text-muted">Lukasz Holeczek</small>
+							<small class="text-muted float-right mt-1">1:52 PM</small>
+						</div>
+						<div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
+						<small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+							eiusmod tempor incididunt...</small>
+					</div>
+					<hr>
+					<div class="message">
+						<div class="py-3 pb-5 mr-3 float-left">
+							<div class="avatar">
+								<img src="assets/img/avatars/7.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
+								<span class="avatar-status badge-success"></span>
+							</div>
+						</div>
+						<div>
+							<small class="text-muted">Lukasz Holeczek</small>
+							<small class="text-muted float-right mt-1">1:52 PM</small>
+						</div>
+						<div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
+						<small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+							eiusmod tempor incididunt...</small>
+					</div>
+					<hr>
+					<div class="message">
+						<div class="py-3 pb-5 mr-3 float-left">
+							<div class="avatar">
+								<img src="assets/img/avatars/7.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
+								<span class="avatar-status badge-success"></span>
+							</div>
+						</div>
+						<div>
+							<small class="text-muted">Lukasz Holeczek</small>
+							<small class="text-muted float-right mt-1">1:52 PM</small>
+						</div>
+						<div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
+						<small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+							eiusmod tempor incididunt...</small>
+					</div>
+					<hr>
+					<div class="message">
+						<div class="py-3 pb-5 mr-3 float-left">
+							<div class="avatar">
+								<img src="assets/img/avatars/7.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
+								<span class="avatar-status badge-success"></span>
+							</div>
+						</div>
+						<div>
+							<small class="text-muted">Lukasz Holeczek</small>
+							<small class="text-muted float-right mt-1">1:52 PM</small>
+						</div>
+						<div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
+						<small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+							eiusmod tempor incididunt...</small>
+					</div>
+				</div>
+			</tab>
+			<tab>
+				<ng-template tabHeading><i class="icon-settings"></i></ng-template>
+				<div class="p-3">
+					<h6>Settings</h6>
+					<div class="aside-options">
+						<div class="clearfix mt-4">
+							<small><b>Option 1</b></small>
+							<label class="switch switch-label switch-pill switch-success switch-sm float-right">
+								<input type="checkbox" class="switch-input" checked>
+								<span class="switch-slider" data-checked="On" data-unchecked="Off"></span>
+							</label>
+						</div>
+						<div>
+							<small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+								eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
+						</div>
+					</div>
+					<div class="aside-options">
+						<div class="clearfix mt-3">
+							<small><b>Option 2</b></small>
+							<label class="switch switch-label switch-pill switch-success switch-sm float-right">
+								<input type="checkbox" class="switch-input">
+								<span class="switch-slider" data-checked="On" data-unchecked="Off"></span>
+							</label>
+						</div>
+						<div>
+							<small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+								eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
+						</div>
+					</div>
+					<div class="aside-options">
+						<div class="clearfix mt-3">
+							<small><b>Option 3</b></small>
+							<label class="switch switch-label switch-pill switch-success switch-sm float-right">
+								<input type="checkbox" class="switch-input">
+								<span class="switch-slider" data-checked="On" data-unchecked="Off"></span>
+								<span class="switch-handle"></span>
+							</label>
+						</div>
+					</div>
+					<div class="aside-options">
+						<div class="clearfix mt-3">
+							<small><b>Option 4</b></small>
+							<label class="switch switch-label switch-pill switch-success switch-sm float-right">
+								<input type="checkbox" class="switch-input" checked>
+								<span class="switch-slider" data-checked="On" data-unchecked="Off"></span>
+							</label>
+						</div>
+					</div>
+					<hr>
+					<h6>System Utilization</h6>
+					<div class="text-uppercase mb-1 mt-4"><small><b>CPU Usage</b></small></div>
+					<div class="progress progress-xs">
+						<div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25"
+							aria-valuemin="0" aria-valuemax="100"></div>
+					</div>
+					<small class="text-muted">348 Processes. 1/4 Cores.</small>
+					<div class="text-uppercase mb-1 mt-2"><small><b>Memory Usage</b></small></div>
+					<div class="progress progress-xs">
+						<div class="progress-bar bg-warning" role="progressbar" style="width: 70%" aria-valuenow="70"
+							aria-valuemin="0" aria-valuemax="100"></div>
+					</div>
+					<small class="text-muted">11444GB/16384MB</small>
+					<div class="text-uppercase mb-1 mt-2"><small><b>SSD 1 Usage</b></small></div>
+					<div class="progress progress-xs">
+						<div class="progress-bar bg-danger" role="progressbar" style="width: 95%" aria-valuenow="95"
+							aria-valuemin="0" aria-valuemax="100"></div>
+					</div>
+					<small class="text-muted">243GB/256GB</small>
+					<div class="text-uppercase mb-1 mt-2"><small><b>SSD 2 Usage</b></small></div>
+					<div class="progress progress-xs">
+						<div class="progress-bar bg-success" role="progressbar" style="width: 10%" aria-valuenow="10"
+							aria-valuemin="0" aria-valuemax="100"></div>
+					</div>
+					<small class="text-muted">25GB/256GB</small>
+				</div>
+			</tab>
+		</tabset>
+	</app-aside>
+	-->
+</div>
+<app-footer>
+	<span>&copy;2021 Todos los derechos reservados.</span>
+	<!--  <span class="ml-auto"> <a href="h">&trade;</a></span> -->
+</app-footer>

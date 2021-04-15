@@ -1,0 +1,11 @@
+<ul class="pagination" [hidden]="!ShowPaginator()">
+	<li class="page-item">
+		<a class="page-link" href="#" (click)="MovePrev($event)">&lt;</a>
+	</li>
+	<li class="page-item active">
+		<a class="page-link">{{CurrentPage}} de {{TotalPages}}</a>
+	</li>
+	<li class="page-item">
+		<a class="page-link" href="#" (click)="MoveNext($event)">&gt;</a>
+	</li>
+</ul>

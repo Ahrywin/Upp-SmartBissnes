@@ -1,0 +1,46 @@
+<div class="row">
+	<div class="col-12 col-md-6">
+		<app-card HeaderVisible="true">
+			<div header>Información General</div>
+			<form (ngSubmit)="SubmitForm($event)">
+				<div class="form-group">
+					<label>Cuenta</label>
+					<select name="BankID" class="form-control" 
+						[(ngModel)]="FormData.BankID" [disabled]="IsLoadingBanks">
+						<option [ngValue]="null">SELECCIONE</option>
+						<option *ngFor="let obj of BankList" [ngValue]="obj.ID">{{obj.Name}}</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label>Fecha Inicial</label>
+					<input type="date" name="StartDate" class="form-control" 
+						[(ngModel)]="FormData.StartDate" required
+						placeholder="Fecha Inicial"/>
+				</div>
+				<div class="form-group">
+					<label>Fecha Final</label>
+					<input type="date" name="FinishDate" class="form-control" 
+						[(ngModel)]="FormData.FinishDate" required
+						placeholder="Fecha Final"/>
+				</div>
+				<div class="form-group">
+					<div class="input-group">
+						<div class="custom-file">
+							<input type="file" class="custom-file-input" id="inputGroupFile01"
+								(change)="FileChanged($event)">
+							<label class="custom-file-label" for="inputGroupFile01">Selecciona el Archivo</label>
+						</div>
+					</div>
+				</div>
+				<div class="form-group" [hidden]="!IsLoadingSubmit">
+					<app-progressbar></app-progressbar>
+				</div>
+				<app-alert #alert1>
+				</app-alert>
+				<div class="btn-group btn-block" role="group">
+					<button type="submit" class="btn btn-success">Guardar</button>
+				</div>
+			</form>
+		</app-card>
+	</div>
+</div>

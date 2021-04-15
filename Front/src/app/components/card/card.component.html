@@ -1,0 +1,12 @@
+<div class="card" [ngClass]="GetContainerClass()">
+	<div class="card-header" [hidden]="!HeaderVisible">
+		<ng-content select="[header]"></ng-content>
+		<span class="badge float-right" [ngClass]="GetBadgeClass()" [hidden]="!BadgeVisible">{{BadgeValue}}</span>
+	</div>
+	<div class="card-body" [hidden]="IsCollapsed">
+		<ng-content></ng-content>
+	</div>
+	<div class="card-footer" [ngClass]="GetFooterClass()" [hidden]="!FooterVisible">
+		<ng-content select="[footer]"></ng-content>
+	</div>
+</div>

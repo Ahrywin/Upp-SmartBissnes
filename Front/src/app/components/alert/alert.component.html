@@ -1,0 +1,4 @@
+<div class="alert" role="alert" [ngClass]="GetContainerClass()" *ngIf="IsVisible">
+	<i *ngIf="IconName" [ngClass]="IconName"></i>
+	{{Body}}
+</div>

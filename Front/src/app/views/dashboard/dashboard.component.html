@@ -1,0 +1,29 @@
+<div class="animated fadeIn">
+	<div class="row">
+		<div class="col-sm-6" *ngFor="let obj of BanksList" (click)="ShowTrans(obj)" style="cursor: pointer;">
+			<div class="brand-card">
+				<div class="brand-card-header bg-facebook">
+					<span style="color: white;">{{obj.Name}}</span>
+				</div>
+				<div class="brand-card-body">
+					<div>
+						<div class="text-value">{{obj.BalanceDate | date : "short"}}</div>
+						<div class="text-uppercase text-muted small">actualizado</div>
+					</div>
+					<div>
+							<div class="text-value">{{obj.LastBalance | currency : "MXN"}}</div>
+							<div class="text-uppercase text-muted small">saldo anterior</div>
+						</div>
+					<div>
+						<div class="text-value">{{obj.CurrentBalance | currency : "MXN"}}</div>
+						<div class="text-uppercase text-muted small">saldo actual</div>
+					</div>
+					<div>
+						<div class="text-value">{{obj.DeletionCount | number}}</div>
+						<div class="text-uppercase text-muted small">Pendientes</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

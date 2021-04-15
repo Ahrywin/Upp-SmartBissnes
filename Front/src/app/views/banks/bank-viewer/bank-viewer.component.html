@@ -1,0 +1,37 @@
+<app-card>
+	<div class="form-group" [hidden]="!IsLoading">
+		<app-progressbar></app-progressbar>
+	</div>
+	<table class="table table-responsive-lg table-sm mb-0" style="width: 100%;">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th class="text-left">Nombre</th>
+				<th>Creado</th>
+				<!--<th>Modificado</th
+				<th>Actualizado</th>>-->
+				<th>Usuario</th>
+				<th>Status</th>
+				
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let obj of BanksList">
+				<td>
+					<div class="btn-group">
+						<button class="btn btn-default btn-sm" (click)="EditBank(obj)"><i
+								class="icon icon-pencil"></i></button>
+						<button class="btn btn-default btn-sm" (click)="ShowTrans(obj)"><i class="icon icon-list"></i></button>
+					</div>
+				</td>
+				<td class="text-left">{{obj.Name}}</td>
+				<td>{{obj.FechaCreacion | date : "short"}}</td>
+				<td>{{obj.UserName}}</td>
+				<td>
+					<span class="badge badge-success" [hidden]="!obj.IsActive">Activa</span>
+					<span class="badge badge-danger" [hidden]="obj.IsActive">Inactiva</span>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</app-card>
