@@ -11,31 +11,29 @@ import { AuthenticationService } from '../../services/authentication.service';
 })
 export class LoginComponent implements OnInit {
 	@ViewChild(AlertComponent, { static: false }) Alert: AlertComponent;
-
 	public isLoading: boolean = false;
 	public LoginData: UserLogin = new UserLogin();
-
 	constructor(private user: UserService, private auth: AuthenticationService) {
 
 	}
-
 	ngOnInit(): void {
 
 	}
-
 	public IsLoading() {
+
 		return this.isLoading;
+
 	}
 
 	public async onSubmit(e: Event) {
 		e.preventDefault();
+
 		if (this.LoginData.UserName == "") {
 			this.Alert.ShowAlert("El correo electrónico es requerido.");
 		} else if (this.LoginData.Password == "") {
 			this.Alert.ShowAlert("La contraseña es requerida.");
 		} else {
 			this.Alert.Hide();
-
 			this.isLoading = true;
 			let response = await this.user.Login(this.LoginData);
 			this.isLoading = false;
@@ -47,6 +45,7 @@ export class LoginComponent implements OnInit {
 			} else {
 				this.Alert.ShowError(response.Message);
 			}
+
 		}
 	}
 }
