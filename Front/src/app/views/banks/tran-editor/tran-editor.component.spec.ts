@@ -1,3 +1,5 @@
+// IMPLEMENTACION DEL MODULO CREAR USUARIO
+
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TranEditorComponent } from './tran-editor.component';

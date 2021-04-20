@@ -1,3 +1,5 @@
+// IMPLEMENTACION DEL MODULO CREAR USUARIO
+
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { TranSubmit } from '../../../models/banks/tran-submit';
 import { isNullOrUndefined } from 'util';
@@ -57,7 +59,7 @@ export class TranEditorComponent implements OnInit {
 
 			if (response.CodeNumber == ResponseCodes.OK) {
 				const action = (isNullOrUndefined(this.FormData.ID)) ? "creado" : "modificado";
-				this.alert1.ShowSuccess(`El movimiento ha sido ${action} correctamente.`);
+				this.alert1.ShowSuccess(`La alta ha sido hecha${action} correctamente.`);
 				this.FormData.ID = response.Result.ID;
 			} else {
 				this.alert1.ShowError(response.Message);
